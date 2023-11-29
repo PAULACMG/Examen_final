@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>inicio sesion</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/estilosEjercicio2.css">
+</head>
+<body>
+    <h1>Inicio de sesión</h1>
+    <form action="{{ url_for('inicioSesion') }}" method="POST">
+        <label for="usuario">Ingresa tu nombre de usuario:</label>
+        <input type="text" id="usuario" name="usuario" required><br>
+
+        <label for="contrasena">Ingresa tu contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" required><br>
+
+        <input type="submit" value="Verificar">
+    </form>
+    {% if mensaje %}
+    <div>
+        <p> {{mensaje}}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
